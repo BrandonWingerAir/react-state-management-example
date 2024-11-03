@@ -1,5 +1,19 @@
 import { useState } from 'react';
 
+function NameList() {
+  const [list, setList] = useState(["Name1", "Name2", "Name3"]);
+
+  return (
+    <div>
+      <ul>
+        {list.map((name) => (
+          <li key={name}>{name}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
 function Counter() {
   const [count, setCount] = useState(0);
   
@@ -18,8 +32,7 @@ function App() {
   return <div>
     <Counter/>
     <Counter/>
-    <Counter/>
-    <Counter/>
+    <NameList/>
   </div>
 }
 
